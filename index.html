@@ -268,11 +268,12 @@ async function sendMsg(){
       content: m.text
     }));
 
-    const res = await fetch("https://novaopenai-2.onrender.com", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ chat: chatHistory, message: msg })
-    });
+    const res = await fetch("https://nova-ai-2up8.onrender.com/chat", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ chat: chatHistory, message: msg })
+});
+
 
     const data = await res.json();
     removeTyping();
